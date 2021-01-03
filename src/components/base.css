@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo&family=Redressed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Titillium+Web:700|Raleway|Orbitron|Carter+One|Ubuntu|Armata');
+
+body {
+  font-family: 'Exo', sans-serif;
+  font-size: 1em;
+  line-height: 1.65;
+  color: #373f49;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.moving-clouds {
+  background-image: url('https://github.com/PlanB-MC/pbWebsite/blob/master/src/Images/clouds.png?raw=true');
+  position: absolute;
+  z-index: 11111;
+  top: 0;
+  left: 0;
+  width: 250.625em;
+  height: 43.75em;
+  -webkit-animation: cloudLoop 80s linear infinite;
+  animation: cloudLoop 80s linear infinite;
+  /* background-attachment: fixed; */
+}
+
+@keyframes cloudLoop {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
