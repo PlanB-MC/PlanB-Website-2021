@@ -56,6 +56,7 @@ export const ColumnTitle = styled.h5`
     text-transform: uppercase;
     color: #fff;
     padding-left: 10px;
+    margin-bottom: 5px;
 `
 
 export const ColumnLink = styled.a`
@@ -65,5 +66,6 @@ export const ColumnLink = styled.a`
     & a {
         color: #fff;    
         text-decoration: none;
+        margin-left: 3px
     }
 `
