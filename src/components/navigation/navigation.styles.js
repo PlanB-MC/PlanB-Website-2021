@@ -25,6 +25,7 @@ export const NavContainer = styled.nav`
     ${getFloatStyles};
 `
 
-export const SiteName = styled.p`
+export const SiteName = styled.a`
   color: #fff;
+  font-size: 20px;
 `;

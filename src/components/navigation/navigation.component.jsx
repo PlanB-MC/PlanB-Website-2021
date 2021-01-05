@@ -18,7 +18,7 @@ export default () => {
 
     return (
         <NavContainer float={float} role="navigation">
-            <SiteName>PBMC</SiteName>
+            <SiteName href="/">PlanB</SiteName>
         </NavContainer>
     )
 }

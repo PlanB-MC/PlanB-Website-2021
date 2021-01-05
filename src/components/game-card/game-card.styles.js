@@ -9,7 +9,7 @@ export const GameCardTitle = styled.h3`
     font-weight: bold;
     text-transform: uppercase;
     color: #770a0a;
-    font-size: larger;
+    font-size: larger;  
 `
 
 export const GameCardIcon = styled.img`

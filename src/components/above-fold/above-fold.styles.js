@@ -22,7 +22,7 @@ export const BackgroundImg = styled.div`
         top: 0;
         position: absolute;
         width: 100%;
-        z-index: 1;
+        /* z-index: 1; */
   }
 `
 
@@ -38,7 +38,7 @@ export const SiteNameBox = styled.div`
     border: 3px solid #fff;
     border-radius: 5px;
     padding: 15px 50px;
-    z-index: 100000000;
+    z-index: 100;
     margin: 1px;
 
     & h1 {

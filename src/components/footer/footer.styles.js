@@ -26,7 +26,8 @@ export const SocialIconContainer = styled.div`
     
     & svg {
         fill: #fff;
-        height: 25px;
+        height: 35px;
+        width:auto;
         padding: 7px;
         border: 1px solid #fff;
         border-radius: 10px;
