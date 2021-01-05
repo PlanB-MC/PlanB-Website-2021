@@ -60,7 +60,7 @@ export const ColumnTitle = styled.h5`
     margin-bottom: 5px;
 `
 
-export const ColumnLink = styled.a`
+export const ColumnLink = styled.div`
     color: #fff;
     padding-left: 15px;
     line-height: 26px;
