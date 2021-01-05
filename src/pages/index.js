@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import AboveFold from '../components/above-fold/above-fold.component'
 import GameBar from '../components/game-bar/game-bar.component'
-import MemberSection from '../components/member-section/member-section.component'
+import CommunitySection from '../components/community-section/community-section.component'
 
 class RootIndex extends React.Component {
   render() {
@@ -17,8 +17,7 @@ class RootIndex extends React.Component {
         <Helmet title={siteTitle} />
         <AboveFold />
         <GameBar games={games} />
-        <MemberSection />
-
+        <CommunitySection />
       </Layout>
     )
   }

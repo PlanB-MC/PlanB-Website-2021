@@ -1,10 +1,21 @@
 import React from 'react'
 import { FaDiscord, FaTwitch, FaYoutube, FaReddit } from 'react-icons/fa';
 
-import { CommunityIntroContainer, MemberAvatar, MemberCard, MemberName, MembersContainer, CommunitySectionContainer, CommunitySectionTitle, MemberSocials, CommunitySectionSubTitle, CommunitySectionDesc } from './member-section.styles'
+import {
+    CommunityIntroContainer,
+    CommunitySectionContainer,
+    CommunitySectionTitle,
+    CommunitySectionSubTitle,
+    CommunitySectionDesc,
+    MembersContainer,
+    MemberCard,
+    MemberAvatar,
+    MemberName,
+    MemberSocials
+} from './community-section.styles'
 const members = require("../../data/members.json")
 
-const MemberSection = () => {
+const CommunitySection = () => {
 
     return (
         <CommunitySectionContainer>
@@ -37,5 +48,5 @@ const MemberSection = () => {
     )
 }
 
-export default MemberSection
+export default CommunitySection
 
