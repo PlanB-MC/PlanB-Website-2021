@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { MapEmbed, NavbarBacking, ServerPageContainer, ServerTitleContainer, ServerTitleName, ServerTitleSubtitle } from './serverPage.styles.js'
@@ -10,7 +10,7 @@ class ServerPageTemplate extends React.Component {
         const server = get(this.props, 'data.contentfulServer')
 
         return (
-            <Fragment>
+            <div>
                 <Navigation noFloat />
                 <ServerPageContainer>
                     <NavbarBacking />
@@ -23,10 +23,7 @@ class ServerPageTemplate extends React.Component {
                     <br /><br /><br /><br /><br /><br /><br /><br /><br />
                 </ServerPageContainer>
                 <Footer />
-            </Fragment>
-
-
-
+            </div>
         )
     }
 }
