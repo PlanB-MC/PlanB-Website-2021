@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
 import heroStyles from '../components/hero.module.css'
-import { MapEmbed, NavbarBacking, ServerPageContainer, ServerTitleContainer, ServerTitleName, ServerTitleSubtitle } from './serverPage.styles'
+import { MapEmbed, NavbarBacking, ServerPageContainer, ServerTitleContainer, ServerTitleName, ServerTitleSubtitle } from './serverPage.styles.js'
 import { Fragment } from 'react'
 import Navigation from '../components/navigation/navigation.component'
 import Footer from '../components/footer/footer.component'
