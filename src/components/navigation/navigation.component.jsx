@@ -2,13 +2,15 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'gatsby'
 import { NavContainer, SiteName } from './navigation.styles'
 
-export default () => {
+export default (noFloat) => {
 
-    const [float, setFloat] = useState(false)
+    const [float, setFloat] = useState(noFloat ? true : false)
+    console.log(1111, noFloat)
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 0) setFloat(true)
+            if (noFloat) setFloat(true)
+            else if (window.scrollY > 0) setFloat(true)
             else if (window.scrollY === 0) setFloat(false)
         }
         window.addEventListener("scroll", handleScroll)
