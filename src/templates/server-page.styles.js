@@ -30,12 +30,12 @@ export const ServerTitleContainer = styled.div`
     z-index: 999;
 `
 
-export const ServerTitleName = styled.div`
-    font-size: 4vw;
+export const ServerTitleName = styled.h1`
+    font-size: 80px;
     text-transform: uppercase;
 `
 
-export const ServerTitleSubtitle = styled.div`
-    font-size: 1vw;
-
+export const ServerTitleSubtitle = styled.h2`
+    font-size: 20px;
+    /* margin-bottom: 20px; */
 `

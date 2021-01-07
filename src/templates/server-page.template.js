@@ -12,7 +12,7 @@ const ServerPageTemplate = props => {
       <Navigation noFloat />
       <ServerPageContainer>
         <NavbarBacking />
-        <MapEmbed src={server.mapUrl} />
+
 
         <ServerTitleContainer>
           <ServerTitleName>{server.serverName}</ServerTitleName>
