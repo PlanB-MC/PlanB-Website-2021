@@ -8,20 +8,11 @@ import Footer from '../components/footer/footer.component'
 const ServerPageTemplate = props => {
   const server = get(props, 'data.contentfulServer')
   return (
-    <>
+    <Fragment>
       <Navigation noFloat />
-      <ServerPageContainer>
-        <NavbarBacking />
-        <MapEmbed src={server.mapUrl} />
-
-        <ServerTitleContainer>
-          <ServerTitleName>{server.serverName}</ServerTitleName>
-          <ServerTitleSubtitle>Nether Update</ServerTitleSubtitle>
-        </ServerTitleContainer>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br />
-      </ServerPageContainer>
+      Test 1
       <Footer />
-    </>
+    </Fragment>
   )
 }
 
