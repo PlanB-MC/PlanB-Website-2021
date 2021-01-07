@@ -8,11 +8,11 @@ import Footer from '../components/footer/footer.component'
 const ServerPageTemplate = props => {
   const server = get(props, 'data.contentfulServer')
   return (
-    <div>
+    <>
       <Navigation noFloat />
       <ServerPageContainer>
         <NavbarBacking />
-
+        <MapEmbed src={server.mapUrl} />
 
         <ServerTitleContainer>
           <ServerTitleName>{server.serverName}</ServerTitleName>
@@ -21,7 +21,7 @@ const ServerPageTemplate = props => {
         <br /><br /><br /><br /><br /><br /><br /><br /><br />
       </ServerPageContainer>
       <Footer />
-    </div>
+    </>
   )
 }
 

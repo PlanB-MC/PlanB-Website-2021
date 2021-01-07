@@ -5,7 +5,6 @@ import { NavContainer, SiteName } from './navigation.styles'
 export default (noFloat) => {
 
     const [float, setFloat] = useState(noFloat ? true : false)
-    console.log(1111, noFloat)
 
     useEffect(() => {
         const handleScroll = () => {

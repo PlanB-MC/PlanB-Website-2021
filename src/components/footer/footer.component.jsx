@@ -42,7 +42,6 @@ export default () => (
     `}
         render={data => {
 
-            console.log(data)
             const date = new Date()
             const currentYear = date.getFullYear();
 
