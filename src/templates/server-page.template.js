@@ -1,20 +1,26 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import { MapEmbed, NavbarBacking, ServerPageContainer, ServerTitleContainer, ServerTitleName, ServerTitleSubtitle } from './server-page.styles.js'
-import Navigation from '../components/navigation/navigation.component'
-import Footer from '../components/footer/footer.component'
-import { Fragment } from 'react'
+import { ServerPageContainer, NavbarBacking, MapEmbed, ServerTitleContainer, ServerTitleName, ServerTitleSubtitle } from './server-page.styles'
+import Layout from '../components/layout'
 
 const ServerPageTemplate = props => {
   const server = get(props, 'data.contentfulServer')
   return (
+    <Layout location={props.location}>
 
-    <Fragment>
-      <Navigation noFloat />
-      Test 1
-      <Footer />
-    </Fragment>
+      <ServerPageContainer>
+        <NavbarBacking />
+        <MapEmbed src={server.mapUrl} />
+
+        <ServerTitleContainer>
+          <ServerTitleName>{server.serverName}</ServerTitleName>
+          <ServerTitleSubtitle>Nether Update</ServerTitleSubtitle>
+        </ServerTitleContainer>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </ServerPageContainer>
+
+    </Layout>
   )
 }
 
