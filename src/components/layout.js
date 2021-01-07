@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import '../reset.css'
+// import '../reset.css'
 import './base.css'
 import Container from './container'
 import Navigation from './navigation/navigation.component'
