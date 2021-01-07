@@ -2,27 +2,26 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import Layout from '../components/layout'
+
 
 import { ServerPageContainer, NavbarBacking, MapEmbed, ServerTitleContainer, ServerTitleName, ServerTitleSubtitle } from './server-page.styles'
+import ServerPageLayout from '../layouts/server-page/server-page.layouts'
 
 const ServerPageTemplate = props => {
   const server = get(props, 'data.contentfulServer')
   return (
-    <Layout location={props.location}>
-
+    <ServerPageLayout>
       <ServerPageContainer>
         <NavbarBacking />
         <MapEmbed src={server.mapUrl} />
 
         <ServerTitleContainer>
-          <ServerTitleName>{server.serverName} - Test 3</ServerTitleName>
+          <ServerTitleName>{server.serverName} - Test 4</ServerTitleName>
           <ServerTitleSubtitle>Nether Update</ServerTitleSubtitle>
         </ServerTitleContainer>
         <br /><br /><br /><br /><br /><br /><br /><br /><br />
       </ServerPageContainer>
-
-    </Layout>
+    </ServerPageLayout>
   )
 }
 
