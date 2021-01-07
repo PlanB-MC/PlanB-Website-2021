@@ -4,10 +4,12 @@ import get from 'lodash/get'
 import { MapEmbed, NavbarBacking, ServerPageContainer, ServerTitleContainer, ServerTitleName, ServerTitleSubtitle } from './server-page.styles.js'
 import Navigation from '../components/navigation/navigation.component'
 import Footer from '../components/footer/footer.component'
+import { Fragment } from 'react'
 
 const ServerPageTemplate = props => {
   const server = get(props, 'data.contentfulServer')
   return (
+
     <Fragment>
       <Navigation noFloat />
       Test 1
