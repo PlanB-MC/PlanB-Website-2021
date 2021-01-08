@@ -16,6 +16,7 @@ export const MapEmbed = styled.iframe`
       height: 50vh;
       position: relative;
       z-index: 1;
+      border: none;
 `
 
 export const ServerTitleContainer = styled.div`
@@ -31,8 +32,9 @@ export const ServerTitleContainer = styled.div`
 `
 
 export const ServerTitleName = styled.h1`
-    font-size: 80px;
+    font-size: 70px;
     text-transform: uppercase;
+    margin: 0;
 `
 
 export const ServerTitleSubtitle = styled.h2`

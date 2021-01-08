@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import get from 'lodash/get'
 
 
-
+import Layout from '../components/layout'
 import { ServerPageContainer, NavbarBacking, MapEmbed, ServerTitleContainer, ServerTitleName, ServerTitleSubtitle } from './server-page.styles'
 import ServerPageLayout from '../layouts/server-page/server-page.layouts'
 

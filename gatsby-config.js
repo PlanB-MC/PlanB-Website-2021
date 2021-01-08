@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.development`,
 })
 
 const contentfulConfig = {
@@ -33,6 +33,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
