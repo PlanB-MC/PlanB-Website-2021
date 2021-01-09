@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
         const posts = result.data.allContentfulServer.edges
         posts.forEach((server, index) => {
           createPage({
-            path: `/server/${server.node.slug}/`,
+            path: `/minecraft/server/${server.node.slug}/`,
             component: serverPage,
             context: {
               slug: server.node.slug

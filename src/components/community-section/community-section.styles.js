@@ -40,16 +40,11 @@ export const CommunitySectionSubTitle = styled.h3`
 
 export const CommunitySectionDesc = styled.p`
     margin-top: 25px;
-    text-align: justify
+    text-align: justify;
 `
 
 export const MembersContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 25px;
-    column-gap: 25px;
-    justify-items: center;
-    grid-template-rows: 1fr min-content;
+    
     
 `
 
@@ -91,4 +86,9 @@ export const MemberSocials = styled.div`
     & svg:hover {
         fill: #770a0a;
     }
+`
+
+export const LoadingLabel = styled.h4`
+    color: #fff;
+    font-size: 30px;
 `

@@ -69,16 +69,16 @@ export default () => (
                 <FooterContainer>
                     <MainFooterContainer>
                         <SocialIconContainer>
-                            {data.contentfulGeneralSettings.socialMedia.map(social => {
-                                return <a href={social.url}>{whichSocial(social.name)}</a>
+                            {data.contentfulGeneralSettings.socialMedia.map((social, i) => {
+                                return <a key={i} href={social.url}>{whichSocial(social.name)}</a>
                             })}
                         </SocialIconContainer>
                         <ColumnContainer>
 
                             <Column>
                                 <ColumnTitle>{data.contentfulFooter.columnOneTitle}</ColumnTitle>
-                                {data.contentfulFooter.columnOneLinks.map(link => (
-                                    <ColumnLink>
+                                {data.contentfulFooter.columnOneLinks.map((link, i) => (
+                                    <ColumnLink key={i}>
                                         ❖  <a href={link.url}>{link.text}</a>
                                     </ColumnLink>
                                 ))}
@@ -86,8 +86,8 @@ export default () => (
 
                             <Column>
                                 <ColumnTitle>{data.contentfulFooter.columnTwoTitle}</ColumnTitle>
-                                {data.contentfulFooter.columnTwoLinks.map(link => (
-                                    <ColumnLink>
+                                {data.contentfulFooter.columnTwoLinks.map((link, i) => (
+                                    <ColumnLink key={i}>
                                         ❖  <a href={link.url}>{link.text}</a>
                                     </ColumnLink>
                                 ))}
@@ -95,8 +95,8 @@ export default () => (
 
                             <Column>
                                 <ColumnTitle>{data.contentfulFooter.columnThreeTitle}</ColumnTitle>
-                                {data.contentfulFooter.columnThreeLinks.map(link => (
-                                    <ColumnLink>
+                                {data.contentfulFooter.columnThreeLinks.map((link, i) => (
+                                    <ColumnLink key={i}>
                                         ❖  <a href={link.url}>{link.text}</a>
                                     </ColumnLink>
                                 ))}
@@ -104,8 +104,8 @@ export default () => (
 
                             <Column>
                                 <ColumnTitle>{data.contentfulFooter.columnFourTitle}</ColumnTitle>
-                                {data.contentfulFooter.columnFourLinks.map(link => (
-                                    <ColumnLink>
+                                {data.contentfulFooter.columnFourLinks.map((link, i) => (
+                                    <ColumnLink key={i}>
                                         ❖  <a href={link.url}>{link.text}</a>
                                     </ColumnLink>
                                 ))}
