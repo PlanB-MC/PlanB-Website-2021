@@ -37,10 +37,10 @@ const ServerPageTemplate = props => {
   }
 
 
-  const playTimeTotal = reduceStats(require("../data/stats/rankings/play.json"))
-  const blocksBrokenTotal = reduceStats(require("../data/stats/rankings/mine_blocks.json"))
-  const deathsTotal = reduceStats(require("../data/stats/rankings/death.json"))
-  const mobsKilled = reduceStats(require("../data/stats/rankings/kill_any.json"))
+  // const playTimeTotal = reduceStats(require("../data/stats/rankings/play.json"))
+  // const blocksBrokenTotal = reduceStats(require("../data/stats/rankings/mine_blocks.json"))
+  // const deathsTotal = reduceStats(require("../data/stats/rankings/death.json"))
+  // const mobsKilled = reduceStats(require("../data/stats/rankings/kill_any.json"))
 
 
 
