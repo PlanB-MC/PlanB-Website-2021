@@ -23,8 +23,6 @@ export const CommunitySectionTitle = styled.h2`
     border-bottom: 2px solid #770a0a;
     width: fit-content;
     margin: auto;
-    
-;
 `
 
 export const CommunitySectionSubTitle = styled.h3`
@@ -44,7 +42,7 @@ export const CommunitySectionDesc = styled.p`
 `
 
 export const MembersContainer = styled.div`
-    
+    padding-top: 90px;
     
 `
 

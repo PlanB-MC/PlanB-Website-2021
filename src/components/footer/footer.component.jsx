@@ -68,11 +68,7 @@ export default () => (
             return (
                 <FooterContainer>
                     <MainFooterContainer>
-                        <SocialIconContainer>
-                            {data.contentfulGeneralSettings.socialMedia.map((social, i) => {
-                                return <a key={i} href={social.url}>{whichSocial(social.name)}</a>
-                            })}
-                        </SocialIconContainer>
+
                         <ColumnContainer>
 
                             <Column>
@@ -113,7 +109,11 @@ export default () => (
 
 
                         </ColumnContainer>
-
+                        <SocialIconContainer>
+                            {data.contentfulGeneralSettings.socialMedia.map((social, i) => {
+                                return <a key={i} href={social.url}>{whichSocial(social.name)}</a>
+                            })}
+                        </SocialIconContainer>
                     </MainFooterContainer>
                     <CopyrightBar>Copyright © {currentYear} - PlanB MC</CopyrightBar>
                 </FooterContainer>

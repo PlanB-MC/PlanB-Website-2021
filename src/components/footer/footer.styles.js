@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const FooterContainer = styled.div`
     /* height: 200px; */
-    border-top: 5px solid #770a0a;
+    border-top: 5px solid #FF1053;
 `
 
 export const MainFooterContainer = styled.div`
@@ -18,33 +18,28 @@ export const CopyrightBar = styled.div`
 `
 
 export const SocialIconContainer = styled.div`
-    margin: 0 auto;
-    width: 70%;    
     display: flex;
-    justify-content: space-evenly;
-    padding-top: 30px;
-    
+    justify-content: center;
+    padding: 15px 0;
+
     & svg {
         fill: #fff;
-        height: 35px;
-        width:auto;
-        padding: 7px;
-        border: 1px solid #fff;
-        border-radius: 10px;
+        font-size: 20px;
+        margin: 10px 25px;
     }
 
     & svg:hover {
-        border: 1px solid #770a0a;
-        fill: #770a0a;
-        background-color:rgba(255, 255, 255,0.99);
+        fill: #FF1053;
     }
 `
 
 export const ColumnContainer = styled.div`
     display: flex;
     justify-content: space-around;
-    margin-top: 60px;
+    padding-top: 30px;
     padding-bottom: 30px;
+    width: 80%;
+    margin: auto;
 `
 
 export const Column = styled.div`
@@ -53,7 +48,7 @@ export const Column = styled.div`
 `
 
 export const ColumnTitle = styled.h5`
-    border-left: 5px solid #770a0a;
+    border-left: 5px solid #FF1053;
     text-transform: uppercase;
     color: #fff;
     padding-left: 10px;
@@ -64,6 +59,7 @@ export const ColumnLink = styled.div`
     color: #fff;
     padding-left: 15px;
     line-height: 26px;
+    
     & a {
         color: #fff;    
         text-decoration: none;
