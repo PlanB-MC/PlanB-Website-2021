@@ -90,7 +90,7 @@ const ServerPageTemplate = props => {
           <ServerInfoSection>
             <ServerDataPanel>
               <h2>{server.seasonDescTitle}</h2>
-              <p dangerouslySetInnerHTML={{
+              <div dangerouslySetInnerHTML={{
                 __html: server.seasonDescription.childMarkdownRemark.html,
               }} />
 
@@ -149,7 +149,7 @@ const ServerPageTemplate = props => {
               <ul>
                 {server.plugins.map(plugin => {
                   return (
-                    <PluginItem key={plugin.pluginName} data-tip={plugin.shortDescription}><ReactTooltip className={"tooltip"} />
+                    <PluginItem key={plugin.pluginName} data-tip={plugin.shortDescription} data-for={plugin.pluginName}><ReactTooltip className={"tooltip"} id={plugin.pluginName} />
                       <a href={plugin.pluginUrl} target="_blank" rel="noopener noreferrer">{plugin.pluginName}</a>
                     </PluginItem>
 
