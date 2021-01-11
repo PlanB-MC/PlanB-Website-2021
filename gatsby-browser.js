@@ -1,5 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactTooltip from "react-tooltip";
+import './src/components/base.css'
+
+if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]', {
+        offset: 100,
+    })
+}
 
 const App = ({ element }) => {
     return (
