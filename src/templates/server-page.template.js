@@ -5,7 +5,7 @@ import moment from 'moment';
 
 import { ServerPageContainer, NavbarBacking, MapEmbed, ServerTitleContainer, ServerTitleName, ServerTitleLinks, ServerDesc, LinkBtn, LinkIcon, LinkText, ServerPageContent, ServerInfoSection, ServerDataPanel, SeasonIconContainer, SeasonIconText, SeasonIconTray, SeasonIconLabel, PluginItem, DownloadContainer, DownloadCard, DownloadCardImage, DownloadCardDescription, DownloadCardTitle, DownloadMainContent, DownloadCardButton, TagContainer, Tag, VersionTag, DownloadControlBar, DownloadSection } from './server-page.styles'
 import ServerPageLayout from '../layouts/server-page/server-page.layouts'
-import { FaAirFreshener, FaChartLine, FaCogs, FaDownload, FaHashtag, FaInfo, FaMap, FaPaintBrush, FaRegIdBadge, FaRegListAlt, FaTag, FaTree, FaUserCircle, FaUserTie } from 'react-icons/fa'
+import { FaChartLine, FaCogs, FaDownload, FaHashtag, FaInfo, FaMap, FaPaintBrush, FaRegIdBadge, FaRegListAlt, FaTag, FaTree, FaUserTie } from 'react-icons/fa'
 
 const ServerPageTemplate = props => {
   const server = get(props, 'data.contentfulServer')
@@ -227,7 +227,6 @@ const ServerPageTemplate = props => {
             downloads.map(itm => {
               const tags = itm.downloadTags.map(tag => tag.name)
               tags.push("all")
-              console.log(`FILTER: ${downloadFilter} \nTAGS: ${tags} \nRESULT:  ${tags.includes(downloadFilter)}`)
 
               if (!tags.includes(downloadFilter)) return;
               return (

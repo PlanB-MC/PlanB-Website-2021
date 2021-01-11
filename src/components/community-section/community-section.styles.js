@@ -7,7 +7,7 @@ export const CommunitySectionContainer = styled.div`
     background-size: cover; 
     background-attachment: fixed;
     text-align: center;
-    padding: 55px 50px;
+    padding: 55px 10vw;
 `
 
 export const CommunityIntroContainer = styled.div`
@@ -20,7 +20,7 @@ export const CommunityIntroContainer = styled.div`
 export const CommunitySectionTitle = styled.h2`
     text-transform: uppercase;
     font-size: xx-large;
-    border-bottom: 2px solid #770a0a;
+    border-bottom: 2px solid #FF1053;
     width: fit-content;
     margin: auto;
 `
@@ -50,7 +50,7 @@ export const MemberCard = styled.div`
     padding: 20px;
     background-color: #ffff;
     justify-self: stretch;
-    border-top: 5px solid #770a0a;
+    border-top: 5px solid #FF1053;
     margin-bottom: 90px;
     border-radius: 10px 10px 5px 5px;
     -webkit-box-shadow: 0px 9px 18px -2px rgba(0,0,0,0.55);
@@ -63,7 +63,7 @@ export const MemberAvatar = styled.img`
     padding: 5px;
     background-color: #fff;
     margin-top: -100px;
-    border: 4px solid #770a0a;
+    border: 4px solid #FF1053;
 `
 
 export const MemberName = styled.h5`
@@ -82,7 +82,7 @@ export const MemberSocials = styled.div`
     }
 
     & svg:hover {
-        fill: #770a0a;
+        fill: #FF1053;
     }
 `
 

@@ -9,9 +9,13 @@ const GameBar = ({ games }) => {
 
         <GameBarContainer>
 
-            <GameBarTitle>Common Community Games</GameBarTitle>
+            {
+                // <GameBarTitle>Common Community Games</GameBarTitle>
+            }
             <GamesContainer>
                 {games.map(game => <GameCard title={game.gameName} img={game.gameIcon.file.url} key={game.gameName} />)}
+                {games.map(game => <GameCard title={game.gameName} img={game.gameIcon.file.url} key={game.gameName} />)}
+
             </GamesContainer>
 
         </GameBarContainer>

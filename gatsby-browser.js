@@ -2,6 +2,9 @@ import React from "react";
 import ReactTooltip from "react-tooltip";
 import './src/components/base.css'
 
+import { ThemeProvider } from "styled-components"
+import { colors } from "./src/theme.styles"
+
 if (typeof window !== "undefined") {
     // eslint-disable-next-line global-require
     require("smooth-scroll")('a[href*="#"]', {
@@ -12,8 +15,10 @@ if (typeof window !== "undefined") {
 const App = ({ element }) => {
     return (
         <React.Fragment>
-            {element}
-            <ReactTooltip />
+            <ThemeProvider theme={{ colors }}>
+                {element}
+                <ReactTooltip />
+            </ThemeProvider>
         </React.Fragment>
     );
 };

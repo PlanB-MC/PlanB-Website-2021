@@ -7,7 +7,9 @@ const GameCard = ({ title, img }) => {
     return (
         <GameCardContainer>
             <GameCardIcon src={img} alt={title} />
-            <GameCardTitle>{title}</GameCardTitle>
+            {
+                // <GameCardTitle>{title}</GameCardTitle>
+            }
         </GameCardContainer>
     )
 }
