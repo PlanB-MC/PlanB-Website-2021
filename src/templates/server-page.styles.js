@@ -27,7 +27,6 @@ export const ServerTitleContainer = styled.div`
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
     height: 200px;
-    background-color: rgba(0,0,0,.8);
     color: #fff;
     text-align: center;
     margin-top: -13px;

@@ -29,8 +29,8 @@ export default ({ noFloat }) => {
                         <DropdownContent>
                             <a href="/#about-planb">About</a>
                             <a href="/#members">Members</a>
-                            <a href="/rules">Rules</a>
-                            <a href="/donations">Donations</a>
+                            <a href="/#rules">Rules</a>
+                            <a href="/#donations">Donations</a>
                         </DropdownContent>
                     </DropdownLink>
                     <DropdownLink>
