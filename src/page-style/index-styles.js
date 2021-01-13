@@ -9,3 +9,4 @@ export const MainContentContainer = styled.div`
     background-attachment: fixed;
     
 `
+
