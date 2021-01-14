@@ -55,3 +55,7 @@ export const FloatingBarLinkText = styled.div`
 
 
 `
+
+export const FloatingBarContentContainer = styled.div`
+    display: flex
+`

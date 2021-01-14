@@ -1,8 +1,12 @@
 import React from 'react'
-import { FloatingBarContainer, FloatingBarLinkBtn, FloatingBarLinkContainer, FloatingBarLinkIcon, FloatingBarLinkText, FloatingBarTitle } from './floating-bar.styles'
+import { FloatingBarContainer, FloatingBarContentContainer, FloatingBarLinkBtn, FloatingBarLinkContainer, FloatingBarLinkIcon, FloatingBarLinkText, FloatingBarTitle } from './floating-bar.styles'
 
 
-const FloatingBar = ({ id, title, links, content, setStateFn, stateName }) => {
+const FloatingBar = ({ id, title, links, content, setStateFn, target, rel }) => {
+
+    const onClickFuntion = (stateName) => {
+        return stateName ? setStateFn(stateName) : null
+    }
 
     return (
         <FloatingBarContainer id={id}>
@@ -15,7 +19,7 @@ const FloatingBar = ({ id, title, links, content, setStateFn, stateName }) => {
                     <FloatingBarLinkContainer>
                         {links.map(link => {
                             return (
-                                <FloatingBarLinkBtn href={link.href} onClick={() => setStateFn(link.stateName)}>
+                                <FloatingBarLinkBtn href={link.href} rel={link.rel} target={link.target} onClick={() => onClickFuntion(link.stateName)}>
                                     <FloatingBarLinkIcon >{link.icon}</FloatingBarLinkIcon>
                                     <FloatingBarLinkText>{link.text}</FloatingBarLinkText>
                                 </FloatingBarLinkBtn>
@@ -26,7 +30,7 @@ const FloatingBar = ({ id, title, links, content, setStateFn, stateName }) => {
             }
 
             {
-                content ? content : null
+                content ? <FloatingBarContentContainer>{content}</FloatingBarContentContainer> : null
             }
 
 

@@ -6,3 +6,9 @@ export const WhitePanelContainer = styled.nav`
     border: 1px solid rgba(0,0,0,0.75);
     text-align: justify;
 `
+
+export const WhitePanelTitle = styled.h2`
+
+`
+
+export const WhitePanelContents = styled.div``

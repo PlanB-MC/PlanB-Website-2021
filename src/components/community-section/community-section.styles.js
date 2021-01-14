@@ -42,7 +42,7 @@ export const CommunitySectionDesc = styled.p`
 `
 
 export const MembersContainer = styled.div`
-    padding-top: 90px;
+    /* padding-top: 90px; */
     
 `
 

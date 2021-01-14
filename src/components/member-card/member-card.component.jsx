@@ -3,7 +3,6 @@ import { MemberAvatar, MemberCardContainer, MemberCardName, SocialMediaTray } fr
 import { FaDiscord, FaTwitch, FaYoutube, FaReddit } from 'react-icons/fa';
 
 const MemberCardNew = ({ member }) => {
-    console.log(991, member)
     return (
         <MemberCardContainer>
 

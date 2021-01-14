@@ -6,6 +6,7 @@ import moment from 'moment';
 import { ServerPageContainer, NavbarBacking, MapEmbed, ServerTitleContainer, ServerTitleName, ServerTitleLinks, ServerDesc, LinkBtn, LinkIcon, LinkText, ServerPageContent, ServerInfoSection, ServerDataPanel, SeasonIconContainer, SeasonIconText, SeasonIconTray, SeasonIconLabel, PluginItem, DownloadContainer, DownloadCard, DownloadCardImage, DownloadCardDescription, DownloadCardTitle, DownloadMainContent, DownloadCardButton, TagContainer, Tag, VersionTag, DownloadControlBar, DownloadSection } from './server-page.styles'
 import ServerPageLayout from '../layouts/server-page/server-page.layouts'
 import { FaChartLine, FaCogs, FaDownload, FaHashtag, FaInfo, FaMap, FaPaintBrush, FaRegIdBadge, FaRegListAlt, FaTag, FaTree, FaUserTie } from 'react-icons/fa'
+import FloatingBar from '../components/floating-bar/floating-bar.component';
 
 const ServerPageTemplate = props => {
   const server = get(props, 'data.contentfulServer')
@@ -62,7 +63,13 @@ const ServerPageTemplate = props => {
 
   const [downloadFilter, setDownloadFilter] = useState("all")
 
+  const serverIntroBarLinks = [
+    { href: "#desc", icon: <FaInfo />, text: "Description", }
+  ]
 
+  if (server.statsPageUrl) serverIntroBarLinks.push({ href: server.statsPageUrl, icon: <FaChartLine />, text: "Stats", target: "_blank", rel: "noopener noreferrer" })
+  if (server.mapUrl) serverIntroBarLinks.push({ href: server.statsPageUrl, icon: <FaMap />, text: "Map", target: "_blank", rel: "noopener noreferrer" })
+  serverIntroBarLinks.push({ href: "#files", icon: <FaDownload />, text: "Files", target: "_blank", rel: "noopener noreferrer" })
 
 
   return (
@@ -71,36 +78,12 @@ const ServerPageTemplate = props => {
         <NavbarBacking />
         <MapEmbed src={server.heroIframeUrl} />
 
-        <ServerTitleContainer>
-          <ServerTitleName>{server.serverName}</ServerTitleName>
-          <ServerTitleLinks>
-
-            <LinkBtn href="#desc">
-              <LinkIcon><FaInfo /></LinkIcon>
-              <LinkText>DESC</LinkText>
-            </LinkBtn>
-
-            {server.statsPageUrl ?
-              <LinkBtn href={server.statsPageUrl} target="_blank" rel="noopener noreferrer">
-                <LinkIcon><FaChartLine /></LinkIcon>
-                <LinkText>STATS</LinkText>
-              </LinkBtn>
-              : null}
+        <FloatingBar
+          title={server.serverName}
+          links={serverIntroBarLinks}
+        />
 
 
-
-            <LinkBtn href={server.mapUrl} target="_blank" rel="noopener noreferrer">
-              <LinkIcon><FaMap /></LinkIcon>
-              <LinkText>MAP</LinkText>
-            </LinkBtn>
-
-            <LinkBtn href="#files">
-              <LinkIcon><FaDownload /></LinkIcon>
-              <LinkText>FILES</LinkText>
-            </LinkBtn>
-
-          </ServerTitleLinks>
-        </ServerTitleContainer>
 
         <ServerPageContent>
           <ServerDesc id="desc" dangerouslySetInnerHTML={{
@@ -182,46 +165,24 @@ const ServerPageTemplate = props => {
         </ServerPageContent>
       </ServerPageContainer>
 
-      <ServerTitleContainer id="files">
-        <ServerTitleName>DOWNLOADS</ServerTitleName>
-        <ServerTitleLinks>
-
-          <LinkBtn href="#files" onClick={() => setDownloadFilter("all")}>
-            <LinkIcon><FaRegListAlt /></LinkIcon>
-            <LinkText>ALL</LinkText>
-          </LinkBtn>
-
-          <LinkBtn href="#files" onClick={() => setDownloadFilter("Client Tweaks")}>
-            <LinkIcon><FaCogs /></LinkIcon>
-            <LinkText>CLIENT TWEAKS</LinkText>
-          </LinkBtn>
-
-          <LinkBtn href="#files" onClick={() => setDownloadFilter("Map")}>
-            <LinkIcon><FaMap /></LinkIcon>
-            <LinkText>MAPS</LinkText>
-          </LinkBtn>
-
-          <LinkBtn href="#files" onClick={() => setDownloadFilter("Texture Pack")}>
-            <LinkIcon><FaPaintBrush /></LinkIcon>
-            <LinkText>TEXTURE PACKS</LinkText>
-          </LinkBtn>
-
-          <LinkBtn href="#files" onClick={() => setDownloadFilter("Skin")}>
-            <LinkIcon><FaUserTie /></LinkIcon>
-            <LinkText>SKINS</LinkText>
-          </LinkBtn>
-
-          <LinkBtn href="#files" onClick={() => setDownloadFilter("Season")}>
-            <LinkIcon><FaTree /></LinkIcon>
-            <LinkText>SEASONS</LinkText>
-          </LinkBtn>
 
 
-        </ServerTitleLinks>
-      </ServerTitleContainer>
+      <FloatingBar
+        id="files"
+        title="DOWNLOADS"
+        links={[
+          { href: "#files", icon: <FaRegListAlt />, text: "All", stateName: "all" },
+          { href: "#files", icon: <FaCogs />, text: "Client Tweaks", stateName: "Client Tweaks" },
+          { href: "#files", icon: <FaMap />, text: "Maps", stateName: "Map" },
+          { href: "#files", icon: <FaRegListAlt />, text: "Seasons", stateName: "Season" },
+          { href: "#files", icon: <FaPaintBrush />, text: "Texture Pack", stateName: "Texture Pack" },
+          { href: "#files", icon: <FaTree />, text: "Skins", stateName: "Skin" },
+        ]}
+        setStateFn={setDownloadFilter}
+      />
+
+
       <DownloadSection>
-
-
         <DownloadContainer>
           {
             downloads.map(itm => {

@@ -23,7 +23,7 @@ const CommunitySection = ({ filter }) => {
     const [items, setItems] = useState(members.slice(0, 9));
 
     const fetchMoreData = () => {
-        console.log(items.length, items)
+
         setTimeout(() => {
             setItems(members.slice(0, (items.length + 9)))
         }, 700);
@@ -61,7 +61,6 @@ const CommunitySection = ({ filter }) => {
 
                     {members.map((member, index) => {
                         const rank = member.rank ? member.rank : "Member"
-                        console.log(filter, filter && rank.includes(filter))
                         if (filter && !rank.includes(filter)) return;
                         return (
                             <MemberCardNew member={member} />
