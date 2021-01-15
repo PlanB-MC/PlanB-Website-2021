@@ -7,7 +7,7 @@ import { HeaderImage, JoinContainer } from '../page-style/join-planb.styles'
 
 const JoinPlanB = (props) => {
 
-    const params = location.search
+    const params = props.location.search
         .slice(1)
         .split('&')
         .map(p => p.split('='))
