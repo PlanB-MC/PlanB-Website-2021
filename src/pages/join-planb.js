@@ -93,6 +93,32 @@ const JoinPlanB = (props) => {
                 <p>Step 3 - Lorem Ispum</p>
                 <p>Step 5 - Lorem Ispum</p>
                 <p>Step 5 - Lorem Ispum</p>
+                <img src={`https://crafatar.com/renders/body/${avatar}?size=120&overlay`} />
+                <form name="Application" data-netlify="true" action="/thankyou">
+                    <input type="hidden" name="form-name" value="Application" />
+
+
+                    <input placeholder="PREFERED NAME" type="text" name="name" />
+                    <input onChange={(a) => onChange(a.target.value)} placeholder="IGN" type="text" name="ign" />
+                    <input type="text" disabled hidden value={`${params.discord}#${params.discrim}`} name="discord" />
+
+                    <input placeholder="AGE" type="text" name="age" />
+                    <input placeholder="TIMEZONE" type="text" name="timezone" />
+                    <input placeholder="HOW DID YOU HEAR ABOUT US" type="text" name="heardaboutusvia" />
+                    <input placeholder="Gender" type="text" name="gender" />
+                    <input placeholder="TELL US A LITTLE ABOUT YOURSELF" type="textarea" name="aboutapplicant" />
+
+                    <input placeholder="WHEN DID YOU START PLAYING MC?" type="text" name="version" />
+                    <input placeholder="WHAT ARE YOUR FAVORITE THINGS TO DO IN MINECRAFT?" type="text" name="favthings" />
+                    <input placeholder="WHAT DO YOU WANT FROM A SERVER AND IT'S COMMUNITY?" type="text" name="expectations" />
+                    <input placeholder="WHAT DREW YOU TO OUR COMMUNITY" type="text" name="planbappeal" />
+
+
+
+                    <div>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
             </div>
         )
 
