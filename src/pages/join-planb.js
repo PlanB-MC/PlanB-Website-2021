@@ -44,7 +44,7 @@ const JoinPlanB = (props) => {
 
                     <input placeholder="PREFERED NAME" type="text" name="name" />
                     <input onChange={(a) => onChange(a.target.value)} placeholder="IGN" type="text" name="ign" />
-                    <input type="text" disabled hidden value={`${params.discord}#${params.discrim}`} />
+                    <input type="text" disabled hidden value={`${params.discord}#${params.discrim}`} name="discord" />
 
                     <input placeholder="AGE" type="text" name="age" />
                     <input placeholder="TIMEZONE" type="text" name="timezone" />
