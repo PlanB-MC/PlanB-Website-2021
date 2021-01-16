@@ -38,7 +38,7 @@ const JoinPlanB = (props) => {
         return (
             <div>
                 <img src={`https://crafatar.com/renders/body/${avatar}?size=120&overlay`} />
-                <form name="Application" netlify action="/thankyou">
+                <form name="Application" data-netlify="true" action="/thankyou">
                     <input type="hidden" name="form-name" value="Application" />
 
 
