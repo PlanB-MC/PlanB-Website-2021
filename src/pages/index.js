@@ -17,85 +17,116 @@ import { FaAddressBook } from 'react-icons/fa'
 
 const RootIndex = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title')
-  const generalSettings = get(props, 'data.allContentfulGeneralSettings.nodes')[0]
+  const generalSettings = get(
+    props,
+    'data.allContentfulGeneralSettings.nodes'
+  )[0]
   const games = get(props, 'data.allContentfulGames.nodes')
 
   const membermap = {
-    admin: "THE ADMINS",
-    member: "THE MEMBERS",
-    vanilla: "THE VANILLARIANS",
-    modded: "THE MODDERS"
+    admin: 'THE ADMINS',
+    member: 'THE MEMBERS',
+    vanilla: 'THE VANILLARIANS',
+    modded: 'THE MODDERS',
   }
 
-  const [floatingBarState, setFloatingBarState] = useState(null);
+  const [floatingBarState, setFloatingBarState] = useState(null)
 
   return (
     <Layout location={props.location}>
       <Helmet title={siteTitle} />
       <AboveFold />
       <FloatingBar
-        content={games.map(game => <GameCard title={game.gameName} img={game.gameIcon.file.url} key={game.gameName} />)}
+        content={games.map((game) => (
+          <GameCard
+            title={game.gameName}
+            img={game.gameIcon.file.url}
+            key={game.gameName}
+          />
+        ))}
       />
       <MainContentContainer>
-        <Grid columns={"1fr 2fr"}>
+        <Grid columns={'1fr 2fr'}>
           <WhitePanel
             title={generalSettings.theAimTitle.toUpperCase()}
-            setHtmlContent={generalSettings.theAimContent.childMarkdownRemark.html}
+            setHtmlContent={
+              generalSettings.theAimContent.childMarkdownRemark.html
+            }
           />
 
           <WhitePanel
             id="about-planb"
             title={generalSettings.theHistoryTitle.toUpperCase()}
-            setHtmlContent={generalSettings.theHistoryContent.childMarkdownRemark.html}
+            setHtmlContent={
+              generalSettings.theHistoryContent.childMarkdownRemark.html
+            }
           />
-
         </Grid>
       </MainContentContainer>
 
       <FloatingBar
-        id={"members"}
-        title={floatingBarState ? membermap[floatingBarState] : "THE COMMUNITY"}
+        id={'members'}
+        title={floatingBarState ? membermap[floatingBarState] : 'THE COMMUNITY'}
         links={[
-          { href: "#members", icon: <FaAddressBook />, text: "ADMIN", stateName: "admin" },
-          { href: "#members", icon: <FaAddressBook />, text: "MEMBER", stateName: "member" },
-          { href: "#members", icon: <FaAddressBook />, text: "VANILLA MC", stateName: "vanilla" },
-          { href: "#members", icon: <FaAddressBook />, text: "MODDED MC", stateName: "modded" },
+          {
+            href: '#members',
+            icon: <FaAddressBook />,
+            text: 'ADMIN',
+            stateName: 'admin',
+          },
+          {
+            href: '#members',
+            icon: <FaAddressBook />,
+            text: 'MEMBER',
+            stateName: 'member',
+          },
+          {
+            href: '#members',
+            icon: <FaAddressBook />,
+            text: 'VANILLA MC',
+            stateName: 'vanilla',
+          },
+          {
+            href: '#members',
+            icon: <FaAddressBook />,
+            text: 'MODDED MC',
+            stateName: 'modded',
+          },
         ]}
         setStateFn={setFloatingBarState}
       />
 
       <CommunitySection filter={floatingBarState} />
 
-      <FloatingBar
-        id={"notices"}
-        title={"COMMUNITY NOTICES"}
-      />
+      <FloatingBar id={'notices'} title={'COMMUNITY NOTICES'} />
 
       <MainContentContainer>
-        <Grid columns={"1fr 1fr 1fr"}>
-
-          <WhitePanel id={"rules"}
+        <Grid columns={'1fr 1fr 1fr'}>
+          <WhitePanel
+            id={'rules'}
             title={generalSettings.theRulesTitle}
-            setHtmlContent={generalSettings.theRulesContent.childMarkdownRemark.html}
+            setHtmlContent={
+              generalSettings.theRulesContent.childMarkdownRemark.html
+            }
           />
 
           <WhitePanel
             title={generalSettings.theTechTitle}
-            setHtmlContent={generalSettings.theTechContent.childMarkdownRemark.html}
+            setHtmlContent={
+              generalSettings.theTechContent.childMarkdownRemark.html
+            }
           />
 
           <WhitePanel
-            id={"donations"}
+            id={'donations'}
             title={generalSettings.theFundingTitle}
-            setHtmlContent={generalSettings.theAimContent.childMarkdownRemark.html}
+            setHtmlContent={
+              generalSettings.theFundingContent.childMarkdownRemark.html
+            }
           />
         </Grid>
       </MainContentContainer>
-
-
-
-
-    </Layout >
+    </Layout>
   )
 }
 
@@ -143,14 +174,14 @@ export const pageQuery = graphql`
       }
     }
     allContentfulGames {
-    nodes {
-      gameName
-      gameIcon {
-        file {
-          url
+      nodes {
+        gameName
+        gameIcon {
+          file {
+            url
+          }
         }
       }
     }
-  }
   }
 `
