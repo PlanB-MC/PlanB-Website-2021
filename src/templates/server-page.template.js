@@ -131,13 +131,63 @@ const ServerPageTemplate = (props) => {
       target: '_blank',
       rel: 'noopener noreferrer',
     })
-  serverIntroBarLinks.push({
-    href: '#files',
-    icon: <FaDownload />,
-    text: 'Files',
-    target: '_blank',
-    rel: 'noopener noreferrer',
+  if (downloads.length)
+    serverIntroBarLinks.push({
+      href: '#files',
+      icon: <FaDownload />,
+      text: 'Files',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    })
+
+  const uniqueDownloadTags = []
+  const downloadLinkFilterList = []
+
+  downloads.map((itm) => {
+    itm.downloadTags.map((tag) => {
+      if (!uniqueDownloadTags.includes(tag.name))
+        uniqueDownloadTags.push(tag.name)
+    })
   })
+
+  uniqueDownloadTags.map((tag) => {
+    if (tag === 'Client Tweaks')
+      downloadLinkFilterList.push({
+        href: '#files',
+        icon: <FaCogs />,
+        text: 'Client Tweaks',
+        stateName: 'Client Tweaks',
+      })
+    if (tag === 'Season' && !downloadLinkFilterList.includes('Seasons'))
+      downloadLinkFilterList.push({
+        href: '#files',
+        icon: <FaRegListAlt />,
+        text: 'Seasons',
+        stateName: 'Season',
+      })
+    if (tag === 'Skin')
+      downloadLinkFilterList.push({
+        href: '#files',
+        icon: <FaTree />,
+        text: 'Skins',
+        stateName: 'Skin',
+      })
+    if (tag === 'Texture Pack')
+      downloadLinkFilterList.push({
+        href: '#files',
+        icon: <FaPaintBrush />,
+        text: 'Texture Pack',
+        stateName: 'Texture Pack',
+      })
+    if (tag === 'Map')
+      downloadLinkFilterList.push({
+        href: '#files',
+        icon: <FaMap />,
+        text: 'Maps',
+        stateName: 'Map',
+      })
+  })
+  console.log(server.pluginsAndMods)
 
   return (
     <ServerPageLayout>
@@ -216,96 +266,70 @@ const ServerPageTemplate = (props) => {
               <h2>{server.pluginTitle}</h2>
               <p>{server.pluginDesc}</p>
               <ul>
-                {server.plugins.map((plugin) => {
-                  return (
-                    <PluginItem key={plugin.pluginName}>
-                      <a
-                        href={plugin.pluginUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-tip={plugin.shortDescription}
-                      >
-                        {plugin.pluginName}
-                      </a>
-                    </PluginItem>
-                  )
-                })}
+                {server.plugins
+                  ? server.plugins.map((plugin) => {
+                      return (
+                        <PluginItem key={plugin.name}>
+                          <a
+                            href={plugin.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-tip={plugin.shortDesc}
+                          >
+                            {plugin.name}
+                          </a>
+                        </PluginItem>
+                      )
+                    })
+                  : null}
               </ul>
             </ServerDataPanel>
           </ServerInfoSection>
         </ServerPageContent>
       </ServerPageContainer>
 
-      <FloatingBar
-        id="files"
-        title="DOWNLOADS"
-        links={[
-          {
-            href: '#files',
-            icon: <FaRegListAlt />,
-            text: 'All',
-            stateName: 'all',
-          },
-          {
-            href: '#files',
-            icon: <FaCogs />,
-            text: 'Client Tweaks',
-            stateName: 'Client Tweaks',
-          },
-          { href: '#files', icon: <FaMap />, text: 'Maps', stateName: 'Map' },
-          {
-            href: '#files',
-            icon: <FaRegListAlt />,
-            text: 'Seasons',
-            stateName: 'Season',
-          },
-          {
-            href: '#files',
-            icon: <FaPaintBrush />,
-            text: 'Texture Pack',
-            stateName: 'Texture Pack',
-          },
-          {
-            href: '#files',
-            icon: <FaTree />,
-            text: 'Skins',
-            stateName: 'Skin',
-          },
-        ]}
-        setStateFn={setDownloadFilter}
-      />
+      {downloads.length ? (
+        <FloatingBar
+          id="files"
+          title="DOWNLOADS"
+          links={downloadLinkFilterList}
+          setStateFn={setDownloadFilter}
+        />
+      ) : null}
 
-      <DownloadSection>
-        <DownloadContainer>
-          {downloads.map((itm) => {
-            const tags = itm.downloadTags.map((tag) => tag.name)
-            tags.push('all')
+      {downloads.length ? (
+        <DownloadSection>
+          <DownloadContainer>
+            {downloads.map((itm) => {
+              const tags = itm.downloadTags.map((tag) => tag.name)
+              tags.push('all')
 
-            if (!tags.includes(downloadFilter)) return
-            return (
-              <DownloadCard>
-                {versionTag(itm.minecraftVersion)}
-                <TagContainer>
-                  {tagMapper(itm.downloadTags, <FaTag />)}
-                </TagContainer>
-                <DownloadCardImage src={`${itm.thumbnail.file.url}`} />
+              if (!tags.includes(downloadFilter)) return
+              return (
+                <DownloadCard>
+                  {versionTag(itm.minecraftVersion)}
+                  <TagContainer>
+                    {tagMapper(itm.downloadTags, <FaTag />)}
+                  </TagContainer>
+                  <DownloadCardImage src={`${itm.thumbnail.file.url}`} />
 
-                <DownloadCardTitle>{itm.name}</DownloadCardTitle>
-                <DownloadMainContent>
-                  <DownloadCardDescription
-                    dangerouslySetInnerHTML={{
-                      __html: itm.description.childMarkdownRemark.html,
-                    }}
-                  />
-                  <DownloadCardButton href={itm.file.file.url}>
-                    Download
-                  </DownloadCardButton>
-                </DownloadMainContent>
-              </DownloadCard>
-            )
-          })}
-        </DownloadContainer>
-      </DownloadSection>
+                  <DownloadCardTitle>{itm.name}</DownloadCardTitle>
+                  <DownloadMainContent>
+                    <DownloadCardDescription
+                      dangerouslySetInnerHTML={{
+                        __html: itm.description.childMarkdownRemark.html,
+                      }}
+                    />
+                    <DownloadCardButton href={itm.file.file.url}>
+                      Download
+                    </DownloadCardButton>
+                  </DownloadMainContent>
+                </DownloadCard>
+              )
+            })}
+          </DownloadContainer>
+        </DownloadSection>
+      ) : null}
     </ServerPageLayout>
   )
 }
@@ -341,10 +365,10 @@ export const pageQuery = graphql`
       pluginTitle
       pluginDesc
       plugins {
-        pluginName
-        longerDescription
-        shortDescription
-        pluginUrl
+        name
+        longerDesc
+        shortDesc
+        url
       }
       seasonStats {
         stat1
