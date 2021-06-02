@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-// import '../reset.css'
 import './base.css'
 import Navigation from './navigation/navigation.component'
 import { Fragment } from 'react'
