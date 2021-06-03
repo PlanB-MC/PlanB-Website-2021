@@ -16,15 +16,14 @@ import {
   MemberSocials,
   LoadingLabel,
 } from './community-section.styles'
-const members = require('../../data/members.json')
 
-const CommunitySection = ({ filter }) => {
+const CommunitySection = ({ filter, members }) => {
   const [items, setItems] = useState(members.slice(0, 9))
 
   const fetchMoreData = () => {
     setTimeout(() => {
       setItems(members.slice(0, items.length + 9))
-    }, 700)
+    }, 7000)
   }
 
   return (
@@ -47,8 +46,15 @@ const CommunitySection = ({ filter }) => {
           }}
         >
           {members.map((member, index) => {
-            const rank = member.rank ? member.rank : 'Member'
-            if (filter && !rank.includes(filter)) return
+            const ranks_n_roles = member.communityRoles.concat(
+              member.communityRank
+            )
+            if (ranks_n_roles.includes('Council of Ricks')) return
+
+            const rank = ranks_n_roles ? ranks_n_roles.join(', ') : 'Member'
+
+            console.log(1111, filter, rank)
+            if (filter && !rank.toLowerCase().includes(filter)) return
             return <MemberCardNew member={member} />
           })}
         </InfiniteScroll>

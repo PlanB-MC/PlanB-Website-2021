@@ -22,6 +22,7 @@ const RootIndex = (props) => {
     'data.allContentfulGeneralSettings.nodes'
   )[0]
   const games = get(props, 'data.allContentfulGames.nodes')
+  const members = get(props, 'data.allContentfulMembers.nodes')
 
   const membermap = {
     admin: 'THE ADMINS',
@@ -96,7 +97,7 @@ const RootIndex = (props) => {
         setStateFn={setFloatingBarState}
       />
 
-      <CommunitySection filter={floatingBarState} />
+      <CommunitySection filter={floatingBarState} members={members} />
 
       <FloatingBar id={'notices'} title={'COMMUNITY NOTICES'} />
 
@@ -137,6 +138,15 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allContentfulMembers {
+      nodes {
+        discordCurrentName
+        minecraftUuid
+        currentMinecraftIgn
+        communityRoles
+        communityRank
       }
     }
     allContentfulGeneralSettings {

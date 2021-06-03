@@ -10,12 +10,16 @@ import {
 import { FaDiscord, FaTwitch, FaYoutube, FaReddit } from 'react-icons/fa'
 
 const MemberCardNew = ({ member }) => {
+  const { currentMinecraftIgn, discordCurrentName, minecraftUuid } = member
+  const name = currentMinecraftIgn ? currentMinecraftIgn : discordCurrentName
+  const uuid = minecraftUuid
+    ? `https://crafatar.com/renders/body/${minecraftUuid}?size=120&overlay`
+    : 'https://st3.depositphotos.com/3581215/18899/v/600/depositphotos_188994514-stock-illustration-vector-illustration-male-silhouette-profile.jpg'
+  console.log(member)
   return (
     <MemberCardContainer>
-      <MemberAvatar
-        src={`https://crafatar.com/renders/body/${member.uuid}?size=120&overlay`}
-      />
-      <MemberCardName>{member.name}</MemberCardName>
+      <MemberAvatar src={uuid} />
+      <MemberCardName>{name}</MemberCardName>
       <SocialMediaTray>
         {/* DISCORD SOCIAL ICON */}
         {member.discord ? (
