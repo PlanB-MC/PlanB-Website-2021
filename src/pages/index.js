@@ -10,10 +10,11 @@ import CommunitySection from '../components/community-section/community-section.
 import { MainContentContainer } from '../page-style/index-styles'
 import WhitePanel from '../components/white-panel/white-panel.component'
 import Grid from '../components/grid/grid.component'
-import FloatingBar from '../components/floating-bar/floating-bar.component'
+import FloatingBar from '../components/AA-new/floating-bar/floating-bar.components'
 import GameCard from '../components/game-card/game-card.component'
 
 import { FaAddressBook } from 'react-icons/fa'
+import BarButton from '../components/bar-button/bar-button.component'
 
 const RootIndex = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title')
@@ -37,15 +38,17 @@ const RootIndex = (props) => {
     <Layout location={props.location}>
       <Helmet title={siteTitle} />
       <AboveFold />
-      <FloatingBar
-        content={games.map((game) => (
-          <GameCard
-            title={game.gameName}
-            img={game.gameIcon.file.url}
-            key={game.gameName}
-          />
-        ))}
-      />
+      <FloatingBar>
+        <GameBar>
+          {games.map((game) => (
+            <GameCard
+              title={game.gameName}
+              img={game.gameIcon.file.url}
+              key={game.gameName}
+            />
+          ))}
+        </GameBar>
+      </FloatingBar>
       <MainContentContainer>
         <Grid columns={'1fr 2fr'}>
           <WhitePanel
@@ -64,43 +67,42 @@ const RootIndex = (props) => {
           />
         </Grid>
       </MainContentContainer>
-
       <FloatingBar
         id={'members'}
         title={floatingBarState ? membermap[floatingBarState] : 'THE COMMUNITY'}
-        links={[
-          {
-            href: '#members',
-            icon: <FaAddressBook />,
-            text: 'ADMIN',
-            stateName: 'admin',
-          },
-          {
-            href: '#members',
-            icon: <FaAddressBook />,
-            text: 'MEMBER',
-            stateName: 'member',
-          },
-          {
-            href: '#members',
-            icon: <FaAddressBook />,
-            text: 'VANILLA MC',
-            stateName: 'vanilla',
-          },
-          {
-            href: '#members',
-            icon: <FaAddressBook />,
-            text: 'MODDED MC',
-            stateName: 'modded',
-          },
-        ]}
-        setStateFn={setFloatingBarState}
-      />
-
+      >
+        <BarButton
+          links={[
+            {
+              href: '#members',
+              icon: <FaAddressBook />,
+              text: 'ADMIN',
+              stateName: 'admin',
+            },
+            {
+              href: '#members',
+              icon: <FaAddressBook />,
+              text: 'MEMBER',
+              stateName: 'member',
+            },
+            {
+              href: '#members',
+              icon: <FaAddressBook />,
+              text: 'VANILLA MC',
+              stateName: 'vanilla',
+            },
+            {
+              href: '#members',
+              icon: <FaAddressBook />,
+              text: 'MODDED MC',
+              stateName: 'modded',
+            },
+          ]}
+          setStateFn={setFloatingBarState}
+        />
+      </FloatingBar>
       <CommunitySection filter={floatingBarState} members={members} />
-
       <FloatingBar id={'notices'} title={'COMMUNITY NOTICES'} />
-
       <MainContentContainer>
         <Grid columns={'1fr 1fr 1fr'}>
           <WhitePanel
