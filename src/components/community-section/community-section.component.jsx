@@ -55,7 +55,7 @@ const CommunitySection = ({ filter, members }) => {
 
             console.log(1111, filter, rank)
             if (filter && !rank.toLowerCase().includes(filter)) return
-            return <MemberCardNew member={member} />
+            return <MemberCardNew member={member} />fdsdfdsfsd
           })}
         </InfiniteScroll>
       </MembersContainer>
