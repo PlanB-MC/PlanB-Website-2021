@@ -11,8 +11,8 @@ const JoinPlanB = (props) => {
     .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {})
 
   const validApplicant = params.pbref === 'true'
-  console.log(params, validApplicant)
-  console.log(props)
+  // console.log(params, validApplicant)
+  // console.log(props)
 
   const [avatar, setAvatar] = useState('61699b2e-d327-4a01-9f1e-0ea8c3f06bc6')
 

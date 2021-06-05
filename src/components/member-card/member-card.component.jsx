@@ -15,7 +15,7 @@ const MemberCardNew = ({ member }) => {
   const uuid = minecraftUuid
     ? `https://crafatar.com/renders/body/${minecraftUuid}?size=120&overlay`
     : 'https://st3.depositphotos.com/3581215/18899/v/600/depositphotos_188994514-stock-illustration-vector-illustration-male-silhouette-profile.jpg'
-  console.log(member)
+
   return (
     <MemberCardContainer>
       <MemberAvatar src={uuid} />
