@@ -14,11 +14,13 @@ const JoinPlanB = (props) => {
     typeof window === 'undefined' || !window.document
       ? null
       : new URL(document.location).searchParams
-  const params = {
-    duuid: search_params.get('duuid'),
-    discrim: search_params.get('discrim'),
-    uname: search_params.get('uname'),
-  }
+  const params = search_params
+    ? {
+        duuid: search_params.get('duuid'),
+        discrim: search_params.get('discrim'),
+        uname: search_params.get('uname'),
+      }
+    : {}
 
   return (
     <Layout location={props.location}>
