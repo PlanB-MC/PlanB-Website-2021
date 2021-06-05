@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "author": "Matt Smith",
   "dependencies": {
+    "awesome-notifications": "^3.1.1",
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-react-helmet": "^3.2.4",
