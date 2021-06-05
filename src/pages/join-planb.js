@@ -10,7 +10,10 @@ import HowToApply from '../components/how-to-apply/how-to-apply.component'
 import Application from '../components/application/application.component'
 
 const JoinPlanB = (props) => {
-  const search_params = new URL(document.location).searchParams
+  const search_params =
+    typeof window === 'undefined' || !window.document
+      ? null
+      : new URL(document.location).searchParams
   const params = {
     duuid: search_params.get('duuid'),
     discrim: search_params.get('discrim'),
