@@ -20,12 +20,12 @@ import {
   MainFooterContainer,
   SocialIconContainer,
 } from './footer.styles'
-import { ColumnLinkContainer } from './footer.styles'
+import { ColumnLinkContainer } from '../../footer/footer.styles'
 
 export default () => (
   <StaticQuery
     query={graphql`
-      query FooterQuery {
+      query Footer1Query {
         contentfulGeneralSettings {
           socialMedia {
             name
@@ -88,13 +88,11 @@ export default () => (
                 <ColumnTitle>
                   {data.contentfulFooter.columnOneTitle}
                 </ColumnTitle>
-                <ColumnLinkContainer>
-                  {data.contentfulFooter.columnOneLinks.map((link, i) => (
-                    <ColumnLink key={i}>
-                      ❖ <a href={link.url}>{link.text}</a>
-                    </ColumnLink>
-                  ))}
-                </ColumnLinkContainer>
+                {data.contentfulFooter.columnOneLinks.map((link, i) => (
+                  <ColumnLink key={i}>
+                    ❖ <a href={link.url}>{link.text}</a>
+                  </ColumnLink>
+                ))}
               </Column>
 
               <Column>
@@ -114,26 +112,22 @@ export default () => (
                 <ColumnTitle>
                   {data.contentfulFooter.columnThreeTitle}
                 </ColumnTitle>
-                <ColumnLinkContainer>
-                  {data.contentfulFooter.columnThreeLinks.map((link, i) => (
-                    <ColumnLink key={i}>
-                      ❖ <a href={link.url}>{link.text}</a>
-                    </ColumnLink>
-                  ))}
-                </ColumnLinkContainer>
+                {data.contentfulFooter.columnThreeLinks.map((link, i) => (
+                  <ColumnLink key={i}>
+                    ❖ <a href={link.url}>{link.text}</a>
+                  </ColumnLink>
+                ))}
               </Column>
 
               <Column>
                 <ColumnTitle>
                   {data.contentfulFooter.columnFourTitle}
                 </ColumnTitle>
-                <ColumnLinkContainer>
-                  {data.contentfulFooter.columnFourLinks.map((link, i) => (
-                    <ColumnLink key={i}>
-                      ❖ <a href={link.url}>{link.text}</a>
-                    </ColumnLink>
-                  ))}
-                </ColumnLinkContainer>
+                {data.contentfulFooter.columnFourLinks.map((link, i) => (
+                  <ColumnLink key={i}>
+                    ❖ <a href={link.url}>{link.text}</a>
+                  </ColumnLink>
+                ))}
               </Column>
             </ColumnContainer>
             <SocialIconContainer>

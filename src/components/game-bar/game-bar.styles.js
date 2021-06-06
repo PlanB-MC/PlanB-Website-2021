@@ -9,4 +9,9 @@ export const GameBarContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: 50px;
   }
+
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+  }
 `

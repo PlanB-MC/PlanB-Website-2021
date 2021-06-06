@@ -31,3 +31,9 @@ export const BarBtnIcon = styled.div`
 `
 
 export const BarBtnText = styled.div``
+
+export const BarBtnNumber = styled.p`
+  color: #ff1053;
+  font-size: 30px;
+  margin: 0;
+`

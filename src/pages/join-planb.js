@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet'
+import get from 'lodash/get'
 import Layout from '../components/layout'
 import FloatingBar from '../components/floating-bar/floating-bar.component'
 import {
@@ -22,11 +24,16 @@ const JoinPlanB = (props) => {
       }
     : {}
 
+  const siteTitle = get(props, 'data.site.siteMetadata.title')
+
   return (
     <Layout location={props.location}>
+      <Helmet title={`Join The Community   |   ${siteTitle}`} />
       <HeaderImage />
       <ContentContainer>
-        <FloatingBar title={`Join PlanB`} />
+        <FloatingBar
+          title={!params.duuid ? 'Join The Community!' : `Apply To Join PlanB`}
+        />
 
         {params.duuid ? <Application params={params} /> : <HowToApply />}
       </ContentContainer>
@@ -35,3 +42,13 @@ const JoinPlanB = (props) => {
 }
 
 export default JoinPlanB
+
+export const pageQuery = graphql`
+  query JoinQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

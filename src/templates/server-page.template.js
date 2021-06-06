@@ -187,7 +187,6 @@ const ServerPageTemplate = (props) => {
         stateName: 'Map',
       })
   })
-  console.log(server.pluginsAndMods)
 
   return (
     <ServerPageLayout>

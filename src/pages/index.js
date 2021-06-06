@@ -34,6 +34,16 @@ const RootIndex = (props) => {
 
   const [floatingBarState, setFloatingBarState] = useState(null)
 
+  console.log(members)
+  const member_stats = {
+    admin: members.filter((x) => x.communityRank.includes('Admin')).length,
+    members: members.filter((x) => x.communityRoles.includes('Member')).length,
+    vanilla: members.filter((x) => x.communityRoles.includes('🔔 VanillaMC'))
+      .length,
+    modded: members.filter((x) => x.communityRoles.includes('🔔 ModdedMC'))
+      .length,
+  }
+  console.log(member_stats)
   return (
     <Layout location={props.location}>
       <Helmet title={siteTitle} />
@@ -76,25 +86,29 @@ const RootIndex = (props) => {
             {
               href: '#members',
               icon: <FaAddressBook />,
-              text: 'ADMIN',
+              stat: `${member_stats.admin}`,
+              text: `ADMIN`,
               stateName: 'admin',
             },
             {
               href: '#members',
               icon: <FaAddressBook />,
-              text: 'MEMBER',
+              stat: member_stats.members,
+              text: `MEMBERS`,
               stateName: 'member',
             },
             {
               href: '#members',
               icon: <FaAddressBook />,
-              text: 'VANILLA MC',
+              stat: member_stats.vanilla,
+              text: `VANILLA MC`,
               stateName: 'vanilla',
             },
             {
               href: '#members',
               icon: <FaAddressBook />,
-              text: 'MODDED MC',
+              stat: member_stats.modded,
+              text: `MODDED MC`,
               stateName: 'modded',
             },
           ]}
