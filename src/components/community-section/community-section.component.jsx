@@ -28,10 +28,12 @@ const CommunitySection = ({ filter, members }) => {
   }
   const [member_count, set_member_count] = useState(calculate_cards())
 
-  browser.on('resize', function () {
-    set_wind_width(document.documentElement.clientWidth)
-    set_member_count(calculate_cards())
-  })
+  if (typeof window !== 'undefined') {
+    browser.on('resize', function () {
+      set_wind_width(document.documentElement.clientWidth)
+      set_member_count(calculate_cards())
+    })
+  }
   // useDebounce(, 500)
 
   const randomised_members = members.sort(() => Math.random() - 0.5)
