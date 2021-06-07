@@ -164,7 +164,7 @@ export const pageQuery = graphql`
     admin_members: allContentfulMembers(
       filter: {
         communityRoles: { in: "Admin" }
-        currentMinecraftIgn: { ne: null }
+        currentMinecraftIgn: { ne: undefined }
       }
     ) {
       nodes {
@@ -178,7 +178,7 @@ export const pageQuery = graphql`
     all_members: allContentfulMembers(
       filter: {
         communityRoles: { in: "Member" }
-        currentMinecraftIgn: { ne: null }
+        currentMinecraftIgn: { ne: undefined }
       }
     ) {
       nodes {
@@ -192,7 +192,7 @@ export const pageQuery = graphql`
     vanilla_members: allContentfulMembers(
       filter: {
         communityRoles: { in: "🔔 VanillaMC" }
-        currentMinecraftIgn: { ne: null }
+        currentMinecraftIgn: { ne: undefined }
       }
     ) {
       nodes {
@@ -206,7 +206,7 @@ export const pageQuery = graphql`
     modded_members: allContentfulMembers(
       filter: {
         communityRoles: { in: "🔔 ModdedMC" }
-        currentMinecraftIgn: { ne: null }
+        currentMinecraftIgn: { ne: undefined }
       }
     ) {
       nodes {
