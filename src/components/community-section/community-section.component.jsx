@@ -16,14 +16,15 @@ const CommunitySection = ({ filter, members }) => {
 
   const calculate_cards = () => {
     if (window_width <= 600) return 4
-    if (window_width > 600 && window_width <= 920) return 6
+    if (window_width > 600 && window_width <= 920) return 4
     if (window_width > 920 && window_width <= 1200) return 6
     if (window_width > 1200 && window_width <= 1400) return 8
-    if (window_width > 1400 && window_width <= 1600) return 5
-    if (window_width > 1600 && window_width <= 1800) return 6
-    if (window_width > 1800 && window_width <= 2000) return 7
-    if (window_width > 2000 && window_width <= 2400) return 6
-    if (window_width > 2400) return 5
+    if (window_width > 1400 && window_width <= 1600) return 10
+    if (window_width > 1600 && window_width <= 1800) return 12
+    if (window_width > 1800 && window_width <= 2000) return 14
+    if (window_width > 2000 && window_width <= 2200) return 16
+    if (window_width > 2200 && window_width <= 2400) return 18
+    if (window_width > 2400) return 20
   }
   const [member_count, set_member_count] = useState(calculate_cards())
 
