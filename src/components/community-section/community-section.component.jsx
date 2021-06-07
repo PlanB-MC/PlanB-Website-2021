@@ -1,42 +1,48 @@
-import React, { useState } from 'react'
-import { FaDiscord, FaTwitch, FaYoutube, FaReddit } from 'react-icons/fa'
+import React, { useEffect, useState } from 'react'
+import useDebounce from '../../helpers/useDebounce.helper'
 import MemberCardNew from '../member-card/member-card.component'
+const browser = require('browser-size')()
 
 import {
-  CommunityIntroContainer,
   CommunitySectionContainer,
-  CommunitySectionTitle,
-  CommunitySectionSubTitle,
-  CommunitySectionDesc,
   MembersContainer,
-  MemberCard,
-  MemberAvatar,
-  MemberName,
-  MemberSocials,
-  LoadingLabel,
 } from './community-section.styles'
 
 const CommunitySection = ({ filter, members }) => {
-  const [items, setItems] = useState(members.slice(0, 9))
+  console.log(123, members)
+  const [window_width, set_wind_width] = useState(
+    document.documentElement.clientWidth
+  )
 
-  const fetchMoreData = () => {
-    setTimeout(() => {
-      setItems(members.slice(0, items.length + 9))
-    }, 7000)
+  const calculate_cards = () => {
+    if (window_width <= 600) return 4
+    if (window_width > 600 && window_width <= 920) return 6
+    if (window_width > 920 && window_width <= 1200) return 6
+    if (window_width > 1200 && window_width <= 1400) return 8
+    if (window_width > 1400 && window_width <= 1600) return 5
+    if (window_width > 1600 && window_width <= 1800) return 6
+    if (window_width > 1800 && window_width <= 2000) return 7
+    if (window_width > 2000 && window_width <= 2400) return 6
+    if (window_width > 2400) return 5
   }
+  const [member_count, set_member_count] = useState(calculate_cards())
+
+  browser.on('resize', function () {
+    set_wind_width(document.documentElement.clientWidth)
+    set_member_count(calculate_cards())
+  })
+  // useDebounce(, 500)
+
+  const randomised_members = members.sort(() => Math.random() - 0.5)
+
+  const members_sample = randomised_members.slice(0, member_count)
+  console.log(members_sample)
 
   return (
     <CommunitySectionContainer>
       <MembersContainer id="members">
-        {members.map((member, index) => {
-          const ranks_n_roles = member.communityRoles.concat(
-            member.communityRank
-          )
-          if (ranks_n_roles.includes('Council of Ricks')) return
-
-          const rank = ranks_n_roles ? ranks_n_roles.join(', ') : 'Member'
-          if (!member.minecraftUuid) return
-          if (filter && !rank.toLowerCase().includes(filter)) return
+        {members_sample.map((member, index) => {
+          console.log(member.currentMinecraftIgn)
           return <MemberCardNew member={member} />
         })}
       </MembersContainer>

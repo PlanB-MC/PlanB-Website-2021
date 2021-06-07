@@ -23,27 +23,29 @@ const RootIndex = (props) => {
     'data.allContentfulGeneralSettings.nodes'
   )[0]
   const games = get(props, 'data.allContentfulGames.nodes')
-  const members = get(props, 'data.allContentfulMembers.nodes')
+  const members = {
+    members: get(props, 'data.all_members.nodes'),
+    admin: get(props, 'data.admin_members.nodes'),
+    vanilla: get(props, 'data.vanilla_members.nodes'),
+    modded: get(props, 'data.modded_members.nodes'),
+  }
 
   const membermap = {
     admin: 'THE ADMINS',
-    member: 'THE MEMBERS',
+    members: 'THE MEMBERS',
     vanilla: 'THE VANILLARIANS',
     modded: 'THE MODDERS',
   }
 
   const [floatingBarState, setFloatingBarState] = useState(null)
 
-  console.log(members)
   const member_stats = {
-    admin: members.filter((x) => x.communityRank.includes('Admin')).length,
-    members: members.filter((x) => x.communityRoles.includes('Member')).length,
-    vanilla: members.filter((x) => x.communityRoles.includes('🔔 VanillaMC'))
-      .length,
-    modded: members.filter((x) => x.communityRoles.includes('🔔 ModdedMC'))
-      .length,
+    admin: members.admin.length,
+    members: members.members.length,
+    vanilla: members.vanilla.length,
+    modded: members.modded.length,
   }
-  console.log(member_stats)
+
   return (
     <Layout location={props.location}>
       <Helmet title={siteTitle} />
@@ -95,7 +97,7 @@ const RootIndex = (props) => {
               icon: <FaAddressBook />,
               stat: member_stats.members,
               text: `MEMBERS`,
-              stateName: 'member',
+              stateName: 'members',
             },
             {
               href: '#members',
@@ -115,7 +117,10 @@ const RootIndex = (props) => {
           setStateFn={setFloatingBarState}
         />
       </FloatingBar>
-      <CommunitySection filter={floatingBarState} members={members} />
+      <CommunitySection
+        filter={floatingBarState}
+        members={floatingBarState ? members[floatingBarState] : members.members}
+      />
       <FloatingBar id={'notices'} title={'COMMUNITY NOTICES'} />
       <MainContentContainer>
         <Grid columns={'1fr 1fr 1fr'}>
@@ -154,6 +159,62 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    admin_members: allContentfulMembers(
+      filter: {
+        communityRoles: { in: "Admin" }
+        currentMinecraftIgn: { ne: null }
+      }
+    ) {
+      nodes {
+        discordCurrentName
+        minecraftUuid
+        currentMinecraftIgn
+        communityRoles
+        communityRank
+      }
+    }
+    all_members: allContentfulMembers(
+      filter: {
+        communityRoles: { in: "Member" }
+        currentMinecraftIgn: { ne: null }
+      }
+    ) {
+      nodes {
+        discordCurrentName
+        minecraftUuid
+        currentMinecraftIgn
+        communityRoles
+        communityRank
+      }
+    }
+    vanilla_members: allContentfulMembers(
+      filter: {
+        communityRoles: { in: "🔔 VanillaMC" }
+        currentMinecraftIgn: { ne: null }
+      }
+    ) {
+      nodes {
+        discordCurrentName
+        minecraftUuid
+        currentMinecraftIgn
+        communityRoles
+        communityRank
+      }
+    }
+    modded_members: allContentfulMembers(
+      filter: {
+        communityRoles: { in: "🔔 ModdedMC" }
+        currentMinecraftIgn: { ne: null }
+      }
+    ) {
+      nodes {
+        discordCurrentName
+        minecraftUuid
+        currentMinecraftIgn
+        communityRoles
+        communityRank
       }
     }
     allContentfulMembers {
