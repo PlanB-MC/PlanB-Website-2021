@@ -9,9 +9,8 @@ import {
 } from './community-section.styles'
 
 const CommunitySection = ({ filter, members }) => {
-  console.log(123, members)
   const [window_width, set_wind_width] = useState(
-    document.documentElement.clientWidth
+    typeof window !== 'undefined' ? document.documentElement.clientWidth : null
   )
 
   const calculate_cards = () => {
