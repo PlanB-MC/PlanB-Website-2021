@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import useDebounce from '../../helpers/useDebounce.helper'
 import MemberCardNew from '../member-card/member-card.component'
-const browser = require('browser-size')()
+const browser = typeof window !== 'undefined' ? null : require('browser-size')()
 
 import {
   CommunitySectionContainer,
