@@ -22,6 +22,10 @@ export const WhitePanelContainer = styled.nav`
     content: '✅';
     padding: 0 10px 0 0;
   }
+
+  @media only screen and (max-width: 750px) {
+    padding: 10px 25px;
+  }
 `
 
 export const WhitePanelTitle = styled.h2``

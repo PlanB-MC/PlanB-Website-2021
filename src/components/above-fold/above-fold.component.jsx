@@ -4,6 +4,7 @@ import { Fragment } from 'react'
 import {
   AboveFoldContainer,
   BackgroundImg,
+  JoinPBButton,
   SiteNameBox,
   SiteNameBoxContents,
   SiteNameContainerBox,
@@ -22,6 +23,7 @@ const AboveFold = () => {
               <SiteNameSubtitle>GAMING</SiteNameSubtitle>
             </SiteNameBoxContents>
           </SiteNameBox>
+          <JoinPBButton>Join</JoinPBButton>
         </SiteNameContainerBox>
       </BackgroundImg>
       <div className="moving-clouds"></div>

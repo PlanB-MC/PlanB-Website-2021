@@ -90,6 +90,11 @@ export const ColumnLinkContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  @media only screen and (max-width: 450px) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 `
 
 export const ColumnLink = styled.div`

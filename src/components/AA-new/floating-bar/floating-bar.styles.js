@@ -21,4 +21,8 @@ export const FloatingBarTitle = styled.h1`
   margin: 0;
   line-height: normal;
   margin-bottom: 15px;
+
+  @media only screen and (max-width: 750px) {
+    font-size: 50px;
+  }
 `

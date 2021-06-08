@@ -8,6 +8,7 @@ import {
   NavContainer,
   SiteName,
   SiteLinks,
+  JoinButton,
 } from './navigation.styles'
 
 import { FaPen, FaUsers, FaGamepad } from 'react-icons/fa'
@@ -53,9 +54,9 @@ export default ({ noFloat }) => {
             </DropdownContent>
           </DropdownLink>
 
-          <a href="/join-planb">
+          <JoinButton href="/join-planb">
             <FaPen /> Join PlanB
-          </a>
+          </JoinButton>
         </SiteLinks>
       </InnerContainer>
     </NavContainer>

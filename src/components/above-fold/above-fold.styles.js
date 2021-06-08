@@ -18,16 +18,15 @@ export const BackgroundImg = styled.div`
     top: 0;
     position: absolute;
     width: 100%;
-    /* z-index: 1; */
   }
 `
 
 export const SiteNameContainerBox = styled.div`
   height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 `
 
 export const SiteNameBox = styled.div`
@@ -56,6 +55,10 @@ export const SiteNameTitle = styled.h1`
   @media only screen and (max-width: 750px) {
     font-size: 5.6rem;
   }
+
+  @media only screen and (max-width: 450px) {
+    font-size: 3.6rem;
+  }
 `
 
 export const SiteNameSubtitle = styled.h2`
@@ -76,5 +79,35 @@ export const SiteNameSubtitle = styled.h2`
     margin-top: -15px;
     letter-spacing: 1.8em;
     text-indent: 1.8em;
+  }
+
+  @media only screen and (max-width: 450px) {
+    font-size: 1em;
+    margin-top: -8px;
+    letter-spacing: 1.5em;
+    text-indent: 1.5em;
+  }
+`
+
+export const JoinPBButton = styled.a`
+  display: none;
+
+  @media only screen and (max-width: 700px) {
+    display: unset;
+    z-index: 10;
+    width: 50px;
+    color: #fff;
+
+    margin-top: 60px;
+    text-transform: uppercase;
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 90px;
+    padding: 10px 20px;
+
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
   }
 `
