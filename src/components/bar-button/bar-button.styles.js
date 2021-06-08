@@ -24,6 +24,10 @@ export const BarBtn = styled.a`
     -moz-box-shadow: 0px 3px 18px -2px rgba(255, 255, 255, 0.3);
     box-shadow: 0px 3px 18px -2px rgba(255, 255, 255, 0.3);
   }
+
+  @media only screen and (max-width: 450px) {
+    min-width: unset;
+  }
 `
 
 export const BarBtnIcon = styled.div`

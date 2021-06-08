@@ -27,6 +27,10 @@ export const SiteNameContainerBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 350px) {
+    height: 92vh;
+  }
 `
 
 export const SiteNameBox = styled.div`

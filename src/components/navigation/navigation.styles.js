@@ -32,8 +32,7 @@ export const NavContainer = styled.nav`
   ${getFloatStyles};
 
   @media only screen and (max-width: 700px) {
-    /* height: 150px; */
-    padding: 20px 0;
+    padding: 0px 0;
   }
 `
 
@@ -45,6 +44,7 @@ export const InnerContainer = styled.div`
 
   @media only screen and (max-width: 700px) {
     flex-direction: column;
+    margin: auto;
   }
 `
 

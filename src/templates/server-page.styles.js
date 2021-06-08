@@ -37,6 +37,10 @@ export const ServerDesc = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.75);
   color: #fff;
   padding: 20px 40px;
+
+  @media only screen and (max-width: 450px) {
+    padding: 10px 20px;
+  }
 `
 
 export const ServerPageContent = styled.div`
@@ -51,6 +55,10 @@ export const ServerInfoSection = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 50px;
+
+  @media only screen and (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const ServerDataPanel = styled.div`
@@ -81,11 +89,24 @@ export const ServerDataPanel = styled.div`
     content: '✅';
     padding: 0 10px 0 0;
   }
+
+  @media only screen and (max-width: 450px) {
+    padding: 0px 25px;
+    line-height: normal;
+    padding-bottom: 25px;
+    text-align: left;
+  }
 `
 
 export const SeasonIconTray = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 450px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
 `
 
 export const SeasonIconContainer = styled.div`
@@ -97,6 +118,10 @@ export const SeasonIconContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: 25px;
+
+  @media only screen and (max-width: 450px) {
+    margin-top: unset;
+  }
 `
 export const SeasonIconText = styled.p`
   margin: 0;
@@ -136,6 +161,12 @@ export const DownloadContainer = styled.div`
   flex-wrap: wrap;
   max-width: 83vw;
   margin: auto;
+
+  @media only screen and (max-width: 450px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
 `
 
 export const DownloadCard = styled.div`
@@ -152,12 +183,16 @@ export const DownloadCard = styled.div`
   margin: 25px;
   flex-basis: 50px;
   flex-grow: 1;
+
+  @media only screen and (max-width: 450px) {
+    margin: auto;
+  }
 `
 
 export const DownloadCardImage = styled.img`
   object-fit: cover;
   max-height: 200px;
-  width: auto;
+  width: 100%;
   border-bottom: 1px solid rgba(95, 95, 95, 0.9);
 `
 

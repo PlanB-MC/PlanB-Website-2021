@@ -13,7 +13,7 @@ body {
 
 @media only screen and (min-width: 500px) {
   .moving-clouds {
-    background-image: url('https://github.com/PlanB-MC/pbWebsite/blob/master/src/Images/clouds.png?raw=true');
+    background-image: url('../assets/clouds.png');
     position: absolute;
     z-index: 11111;
     top: 0;

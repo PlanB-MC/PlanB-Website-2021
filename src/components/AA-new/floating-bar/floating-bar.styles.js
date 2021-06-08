@@ -14,6 +14,11 @@ export const FloatingBarContainer = styled.div`
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
   color: #fff;
+
+  @media only screen and (max-width: 450px) {
+    padding: 50px 0;
+    margin: auto;
+  }
 `
 export const FloatingBarTitle = styled.h1`
   font-size: 70px;
@@ -23,6 +28,10 @@ export const FloatingBarTitle = styled.h1`
   margin-bottom: 15px;
 
   @media only screen and (max-width: 750px) {
+    font-size: 50px;
+  }
+
+  @media only screen and (max-width: 450px) {
     font-size: 50px;
   }
 `
