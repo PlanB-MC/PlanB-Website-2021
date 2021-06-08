@@ -11,17 +11,19 @@ body {
   background-color: #373f49;
 }
 
-.moving-clouds {
-  background-image: url('https://github.com/PlanB-MC/pbWebsite/blob/master/src/Images/clouds.png?raw=true');
-  position: absolute;
-  z-index: 11111;
-  top: 0;
-  left: 0;
-  width: 250.625em;
-  height: 43.75em;
-  -webkit-animation: cloudLoop 80s linear infinite;
-  animation: cloudLoop 80s linear infinite;
-  /* background-attachment: fixed; */
+@media only screen and (min-width: 500px) {
+  .moving-clouds {
+    background-image: url('https://github.com/PlanB-MC/pbWebsite/blob/master/src/Images/clouds.png?raw=true');
+    position: absolute;
+    z-index: 11111;
+    top: 0;
+    left: 0;
+    width: 250.625em;
+    height: 43.75em;
+    -webkit-animation: cloudLoop 80s linear infinite;
+    animation: cloudLoop 80s linear infinite;
+    /* background-attachment: fixed; */
+  }
 }
 
 @keyframes cloudLoop {
