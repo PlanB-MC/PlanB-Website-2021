@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 export const CommunitySectionContainer = styled.div`
@@ -13,6 +14,8 @@ export const CommunitySectionContainer = styled.div`
   background-attachment: fixed;
   text-align: center;
   padding: 55px 10vw;
+  display: flex;
+  flex-direction: column;
 `
 
 export const CommunityIntroContainer = styled.div`
@@ -131,4 +134,30 @@ export const MemberSocials = styled.div`
 export const LoadingLabel = styled.h4`
   color: #fff;
   font-size: 30px;
+`
+
+export const ViewMoreBtn = styled(Link)`
+  /* text-transform: uppercase;
+  padding: 10px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: ; */
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 50vw;
+  padding: 20px 40px;
+  margin: auto;
+  margin-top: 50px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #222;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+
+  &:hover {
+    -webkit-box-shadow: 0px 3px 18px -2px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0px 3px 18px -2px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 3px 18px -2px rgba(255, 255, 255, 0.5);
+    background-color: #222222e5;
+  }
 `

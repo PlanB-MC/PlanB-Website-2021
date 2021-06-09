@@ -38,7 +38,7 @@ export default ({ noFloat }) => {
             </DropdownButton>
             <DropdownContent>
               <Link to="/#about-planb">About</Link>
-              <Link to="/#members">Members</Link>
+              <Link to="/members">Members</Link>
               <Link to="/#rules">Rules</Link>
               <Link to="/#donations">Donations</Link>
             </DropdownContent>
