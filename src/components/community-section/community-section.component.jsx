@@ -6,6 +6,7 @@ const browser = typeof window === 'undefined' ? null : require('browser-size')()
 import {
   CommunitySectionContainer,
   MembersContainer,
+  ViewMoreBtn,
 } from './community-section.styles'
 
 const CommunitySection = ({ filter, members }) => {
@@ -46,6 +47,7 @@ const CommunitySection = ({ filter, members }) => {
           return <MemberCardNew member={member} />
         })}
       </MembersContainer>
+      <ViewMoreBtn to={`/members`}>Meet The rest</ViewMoreBtn>
     </CommunitySectionContainer>
   )
 }
