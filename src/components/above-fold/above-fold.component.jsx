@@ -23,7 +23,7 @@ const AboveFold = () => {
               <SiteNameSubtitle>GAMING</SiteNameSubtitle>
             </SiteNameBoxContents>
           </SiteNameBox>
-          <JoinPBButton>Join</JoinPBButton>
+          <JoinPBButton to="/join-planb">Join</JoinPBButton>
         </SiteNameContainerBox>
       </BackgroundImg>
       <div className="moving-clouds"></div>

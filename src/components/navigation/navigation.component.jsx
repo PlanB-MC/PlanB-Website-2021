@@ -37,10 +37,10 @@ export default ({ noFloat }) => {
               <FaUsers /> Community
             </DropdownButton>
             <DropdownContent>
-              <a href="/#about-planb">About</a>
-              <a href="/#members">Members</a>
-              <a href="/#rules">Rules</a>
-              <a href="/#donations">Donations</a>
+              <Link to="/#about-planb">About</Link>
+              <Link to="/#members">Members</Link>
+              <Link to="/#rules">Rules</Link>
+              <Link to="/#donations">Donations</Link>
             </DropdownContent>
           </DropdownLink>
           <DropdownLink>
@@ -48,13 +48,13 @@ export default ({ noFloat }) => {
               <FaGamepad /> Minecraft
             </DropdownButton>
             <DropdownContent>
-              <a href="/minecraft/server/survival">Survival</a>
-              <a href="/minecraft/server/creative">Creative</a>
-              <a href="/minecraft/server/modded">Modded</a>
+              <Link to="/minecraft/server/survival">Survival</Link>
+              <Link to="/minecraft/server/creative">Creative</Link>
+              <Link to="/minecraft/server/modded">Modded</Link>
             </DropdownContent>
           </DropdownLink>
 
-          <JoinButton href="/join-planb">
+          <JoinButton to="/join-planb">
             <FaPen /> Join PlanB
           </JoinButton>
         </SiteLinks>

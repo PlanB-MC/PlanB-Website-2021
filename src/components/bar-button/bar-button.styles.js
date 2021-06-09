@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 export const BarButtonContainer = styled.div`
@@ -10,7 +11,7 @@ export const BarButtonContainer = styled.div`
   }
 `
 
-export const BarBtn = styled.a`
+export const BarBtn = styled(Link)`
   border: 1px solid rgba(255, 255, 255, 0.3);
   min-width: 90px;
   padding: 10px 20px;

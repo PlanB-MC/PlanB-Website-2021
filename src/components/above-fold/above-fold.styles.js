@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'gatsby-link'
 
 export const AboveFoldContainer = styled.div``
 
@@ -93,7 +94,7 @@ export const SiteNameSubtitle = styled.h2`
   }
 `
 
-export const JoinPBButton = styled.a`
+export const JoinPBButton = styled(Link)`
   display: none;
 
   @media only screen and (max-width: 700px) {

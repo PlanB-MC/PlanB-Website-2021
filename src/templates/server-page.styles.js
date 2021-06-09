@@ -44,10 +44,14 @@ export const ServerDesc = styled.div`
 `
 
 export const ServerPageContent = styled.div`
-  width: 80vw;
-  margin: auto;
+  /* width: 80vw; */
+  margin: 0 70px;
   padding: 50px 0 63px 0;
   text-align: center;
+
+  @media only screen and (max-width: 1200px) {
+    margin: 0 30px;
+  }
 `
 
 export const ServerInfoSection = styled.div`
@@ -56,7 +60,11 @@ export const ServerInfoSection = styled.div`
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 50px;
 
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 1600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (max-width: 1000px) {
     grid-template-columns: 1fr;
   }
 `
@@ -90,7 +98,7 @@ export const ServerDataPanel = styled.div`
     padding: 0 10px 0 0;
   }
 
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 700px) {
     padding: 0px 25px;
     line-height: normal;
     padding-bottom: 25px;
@@ -99,20 +107,38 @@ export const ServerDataPanel = styled.div`
 `
 
 export const SeasonIconTray = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 15px;
+  margin-bottom: 25px;
+
+  @media only screen and (max-width: 1600px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* display: flex;
+  justify-content: space-between; */
+  /* @media only screen and (max-width: 1000px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
 
   @media only screen and (max-width: 450px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
-  }
+  } */
 `
 
 export const SeasonIconContainer = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.25);
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -157,15 +183,46 @@ export const DownloadSection = styled.div`
 `
 
 export const DownloadContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 83vw;
-  margin: auto;
+  padding: 25px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(9, 1fr);
+  margin: 0 50px;
 
-  @media only screen and (max-width: 450px) {
-    display: grid;
+  @media only screen and (max-width: 3500px) {
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 15px;
+  }
+
+  @media only screen and (max-width: 2900px) {
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 15px;
+  }
+
+  @media only screen and (max-width: 2400px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  }
+
+  @media only screen and (max-width: 1900px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+
+  @media only screen and (max-width: 1600px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    margin: 0 10px;
+  }
+
+  @media only screen and (max-width: 750px) {
     grid-template-columns: 1fr;
-    grid-gap: 30px;
+    margin: 0 10px;
   }
 `
 
@@ -175,12 +232,9 @@ export const DownloadCard = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin-top: 25px;
   -webkit-box-shadow: 0px 3px 18px -2px rgba(255, 255, 255, 0.3);
   -moz-box-shadow: 0px 3px 18px -2px rgba(255, 255, 255, 0.3);
   box-shadow: 0px 3px 18px -2px rgba(255, 255, 255, 0.3);
-  /* max-width: 300px; */
-  margin: 25px;
   flex-basis: 50px;
   flex-grow: 1;
 

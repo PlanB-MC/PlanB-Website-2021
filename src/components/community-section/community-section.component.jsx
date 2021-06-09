@@ -38,13 +38,11 @@ const CommunitySection = ({ filter, members }) => {
   const randomised_members = members.sort(() => Math.random() - 0.5)
 
   const members_sample = randomised_members.slice(0, member_count)
-  console.log(members_sample)
 
   return (
     <CommunitySectionContainer>
       <MembersContainer id="members">
         {members_sample.map((member, index) => {
-          console.log(member.currentMinecraftIgn)
           return <MemberCardNew member={member} />
         })}
       </MembersContainer>

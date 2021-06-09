@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
 
 const floatStyles = css`
@@ -113,7 +114,7 @@ export const DropdownLink = styled.div`
   }
 `
 
-export const JoinButton = styled.a`
+export const JoinButton = styled(Link)`
   min-width: 160px;
   font-size: 16px;
   color: #fff;

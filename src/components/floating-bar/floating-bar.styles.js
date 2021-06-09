@@ -14,9 +14,15 @@ export const FloatingBarContainer = styled.div`
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
   color: #fff;
+  padding-top: 25px;
+
+  @media only screen and (max-width: 1200px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
   @media only screen and (max-width: 450px) {
-    padding: 50px 0;
+    /* padding: 50px 0; */
     margin: auto;
   }
 `
@@ -26,7 +32,11 @@ export const FloatingBarTitle = styled.h1`
   text-transform: uppercase;
   margin: 0;
   line-height: normal;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 60px;
+  }
 
   @media only screen and (max-width: 450px) {
     font-size: 50px;
@@ -34,9 +44,15 @@ export const FloatingBarTitle = styled.h1`
 `
 
 export const FloatingBarLinkContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 40px;
+
+  @media only screen and (max-width: 800px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
 
   @media only screen and (max-width: 450px) {
     display: grid;
@@ -47,7 +63,7 @@ export const FloatingBarLinkContainer = styled.div`
 
 export const FloatingBarLinkBtn = styled.a`
   border: 1px solid rgba(255, 255, 255, 0.3);
-  min-width: 90px;
+
   padding: 10px 20px;
   margin: 0 20px;
   color: #fff;

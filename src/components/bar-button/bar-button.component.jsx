@@ -16,7 +16,7 @@ const BarButton = ({ links, setStateFn }) => {
       {links.map((link) => {
         return (
           <BarBtn
-            href={link.href}
+            to={link.href}
             rel={link.rel}
             target={link.target}
             onClick={() => onClickFuntion(link.stateName)}
